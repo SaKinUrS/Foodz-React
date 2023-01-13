@@ -1,0 +1,16 @@
+.rating {
+  display: flex;
+  gap: 5px;
+
+  svg {
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+
+    @media (any-hover: hover) {
+      &:hover,
+      &:hover ~ & {
+        fill: var(--accent-color);
+      }
+    }
+  }
+}

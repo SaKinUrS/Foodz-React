@@ -1,0 +1,13 @@
+:root {
+  --accent-color: #04b90b;
+  --container-width: 1326px;
+}
+
+.price {
+  font-family: "Alice";
+  font-weight: 400;
+  font-size: clamp(2rem, 0.118rem + 2.94vw, 2.5rem);
+  text-transform: capitalize;
+
+  color: var(--accent-color);
+}

@@ -1,0 +1,35 @@
+.header-block {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+.header-block__title {
+  font-family: "Alice";
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 1.14;
+  text-transform: capitalize;
+  color: #23262f;
+}
+.header-block__title span {
+  color: var(--accent-color);
+}
+.header-block__title:not(:last-child) {
+  margin-bottom: 12px;
+}
+@media (max-width: 500px) {
+  .header-block__title {
+    font-size: 32px;
+  }
+}
+.header-block__text {
+  color: #777e91;
+  font-size: 24px;
+  line-height: 1.5;
+}
+@media (max-width: 500px) {
+  .header-block__text {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,133 @@
+.footer {
+  padding: 61px 0 78px;
+}
+@media (max-width: 425px) {
+  .footer {
+    padding: 40px 0;
+  }
+}
+.footer__container {
+  display: flex;
+  gap: 104px;
+}
+@media (max-width: 880px) {
+  .footer__container {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+.footer__about {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+  flex: 0 1 26%;
+  padding: 15px 0;
+}
+@media (max-width: 880px) {
+  .footer__about {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+.footer__text {
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  color: #777e91;
+}
+.footer__nav {
+  display: flex;
+  gap: 136px;
+  flex-wrap: wrap;
+}
+@media (max-width: 1070px) {
+  .footer__nav {
+    gap: 70px;
+  }
+}
+@media (max-width: 880px) {
+  .footer__nav {
+    justify-content: center;
+  }
+}
+@media (max-width: 480px) {
+  .footer__nav {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+}
+@media (max-width: 425px) {
+  .footer__nav {
+    gap: 24px;
+  }
+}
+@media (max-width: 880px) {
+  .footer__item {
+    padding: 15px;
+  }
+}
+@media (max-width: 425px) {
+  .footer__item {
+    padding: 0;
+  }
+}
+
+.item-footer {
+  display: flex;
+  flex-direction: column;
+}
+.item-footer__title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #000;
+}
+.item-footer__title svg {
+  display: none;
+}
+.item-footer__title:not(:last-child) {
+  margin-bottom: 24px;
+}
+@media (max-width: 425px) {
+  .item-footer__title {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .item-footer__title svg {
+    display: inline-block;
+  }
+}
+.item-footer__list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (max-width: 425px) {
+  .list-footer {
+    max-height: 0px;
+    overflow: hidden;
+    transition: 0.2s linear;
+    text-align: left;
+  }
+}
+.list-footer__link {
+  color: #777e91;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: 0.1s linear;
+}
+.list-footer__link:hover {
+  color: var(--accent-color);
+}
+
+.footer-list__icon {
+  transition: 0.2s linear;
+}
+.footer-list__icon.active {
+  transform: rotate(90deg);
+}

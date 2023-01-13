@@ -1,0 +1,128 @@
+.header {
+  position: absolute;
+  z-index: 2000;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: clamp(1.688rem, 1.503rem + 0.92vw, 2.25rem) 0;
+}
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .header__logo svg {
+    width: 100px;
+  }
+}
+@media (max-width: 375px) {
+  .header__logo svg {
+    width: 60px;
+  }
+}
+.header__button {
+  text-transform: uppercase;
+  padding: 10px 20px;
+}
+@media (max-width: 768px) {
+  .header__button {
+    display: none;
+  }
+}
+.header__burger {
+  display: none;
+}
+@media (max-width: 768px) {
+  .header__burger {
+    display: block;
+    height: 18px;
+    width: 30px;
+    position: relative;
+    cursor: pointer;
+    z-index: 5;
+  }
+  .header__burger span {
+    transition: all 0.3s ease 0s;
+    top: calc(50% - 1px);
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+  }
+  .header__burger span:first-child {
+    top: 0;
+  }
+  .header__burger span:last-child {
+    top: auto;
+    bottom: 0;
+  }
+  .header__burger._active span {
+    transform: scale(0);
+  }
+  .header__burger._active span:first-child {
+    transform: rotate(-45deg);
+    top: calc(50% - 1px);
+  }
+  .header__burger._active span:last-child {
+    transform: rotate(45deg);
+    bottom: calc(50% - 1px);
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  transition: 0.2s linear;
+}
+@media (max-width: 768px) {
+  .menu {
+    position: absolute;
+    top: 0;
+    left: -100%;
+  }
+}
+.menu._active {
+  left: 0;
+  width: 100%;
+  flex-direction: column;
+  align-items: start;
+  backdrop-filter: blur(3px);
+}
+.menu__list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+@media (max-width: 768px) {
+  .menu__list {
+    padding: 50px 0;
+    overflow: auto;
+    flex-direction: column;
+    background-color: #d3f9d5;
+    width: 70%;
+    height: 100vh;
+  }
+}
+.menu__link {
+  font-weight: 500;
+  color: #777e90;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: 0.2s linear;
+}
+@media (any-hover: hover) {
+  .menu__link:hover {
+    color: var(--accent-color);
+  }
+}
+@media (max-width: 768px) {
+  .menu__link {
+    font-size: 35px;
+  }
+}
+.menu__link._active {
+  color: var(--accent-color);
+}

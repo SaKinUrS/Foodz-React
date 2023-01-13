@@ -1,0 +1,23 @@
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+
+const RatingStars = () => {
+  const [rating, setRating] = useState(0);
+  return (
+    <div className="rating">
+      {[1, 2, 3, 4, 5].map((star, index) => (
+        <Link to="#!" key={index}>
+          <FontAwesomeIcon
+            icon={faStar}
+            color={`${star <= rating ? "var(--accent-color)" : "#777e90"}`}
+            size="xl"
+            onClick={() => setRating(star)}
+          />
+        </Link>
+      ))}
+    </div>
+  );
+};
+export default RatingStars;

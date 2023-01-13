@@ -1,0 +1,50 @@
+.select-meal {
+  font-family: inherit !important;
+
+  &__control {
+    padding: 10px 20px;
+    background-color: transparent !important;
+    border-radius: 12px !important;
+    margin-bottom: 8px !important;
+    cursor: pointer !important;
+    border: 1px solid #777e91 !important;
+  }
+  &__value-container {
+    padding: 0 !important;
+    height: 24px !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+  }
+  &__indicator {
+    padding: 0 !important;
+    cursor: pointer !important;
+  }
+  &__placeholder {
+    margin: 0 !important;
+  }
+  &__input-container {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  &__indicator-separator {
+    display: none !important;
+  }
+  &__input {
+  }
+  &__option {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    cursor: pointer !important;
+
+    &--is-focused {
+      background-color: var(--accent-color) !important;
+      color: #fff !important;
+    }
+    &--is-selected {
+      background-color: lighten(#04b90b, 3%) !important;
+    }
+  }
+}
+.selectWrapper {
+  display: flex;
+}
