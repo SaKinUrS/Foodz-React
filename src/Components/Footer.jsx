@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+const footerList = [
+  {
+    title: "Support",
+    list: [
+      "Help Centre",
+      "Safety information",
+      "Cancellation options",
+      "Report Complaints",
+    ],
+  },
+  {
+    title: "Community",
+    list: ["Customer Review", "Newsletter"],
+  },
+  {
+    title: "About",
+    list: ["Our Chef", "Careers", "Blog", "Contact"],
+  },
+];
+
 export default function Footer() {
+  const [openList, setOpenList] = useState(0);
+
+  const toggleClickList = (id) => {
+    setOpenList(id);
+  };
+
   return (
     <footer className="footer">
       <div className="footer__container">
@@ -42,122 +68,46 @@ export default function Footer() {
           </div>
         </div>
         <nav className="footer__nav">
-          <div className="footer__item item-footer">
-            <div className="item-footer__title">
-              Support
-              <svg
-                className="footer-list__icon"
-                width="6"
-                height="10"
-                viewBox="0 0 6 10"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+          {footerList.map((item, index) => (
+            <div className="footer__item item-footer">
+              <div
+                className="item-footer__title"
+                onClick={() => toggleClickList(index)}
               >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M0.792893 0.792893C0.402369 1.18342 0.402369 1.81658 0.792893 2.20711L3.58579 5L0.792893 7.79289C0.402369 8.18342 0.402369 8.81658 0.792893 9.20711C1.18342 9.59763 1.81658 9.59763 2.20711 9.20711L5.70711 5.70711C6.09763 5.31658 6.09763 4.68342 5.70711 4.29289L2.20711 0.792893C1.81658 0.402369 1.18342 0.402369 0.792893 0.792893Z"
-                  fill="#23262F"
-                />
-              </svg>
-            </div>
-            <ul className="item-footer__list list-footer">
-              <li className="list-footer__item">
-                <a href="#!" className="list-footer__link">
-                  Help Centre
-                </a>
-              </li>
-              <li className="list-footer__item">
-                <a href="#!" className="list-footer__link">
-                  Safety information
-                </a>
-              </li>
-              <li className="list-footer__item">
-                <a href="#!" className="list-footer__link">
-                  Cancellation options
-                </a>
-              </li>
-              <li className="list-footer__item">
-                <a href="#!" className="list-footer__link">
-                  Report Complaint
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="footer__item item-footer">
-            <div className="item-footer__title">
-              Community
-              <svg
-                className="footer-list__icon"
-                width="6"
-                height="10"
-                viewBox="0 0 6 10"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+                {item.title}
+                <svg
+                  className={`footer-list__icon ${
+                    openList === index ? "active" : ""
+                  }`}
+                  width="6"
+                  height="10"
+                  viewBox="0 0 6 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M0.792893 0.792893C0.402369 1.18342 0.402369 1.81658 0.792893 2.20711L3.58579 5L0.792893 7.79289C0.402369 8.18342 0.402369 8.81658 0.792893 9.20711C1.18342 9.59763 1.81658 9.59763 2.20711 9.20711L5.70711 5.70711C6.09763 5.31658 6.09763 4.68342 5.70711 4.29289L2.20711 0.792893C1.81658 0.402369 1.18342 0.402369 0.792893 0.792893Z"
+                    fill="#23262F"
+                  />
+                </svg>
+              </div>
+              <ul
+                className={`item-footer__list list-footer ${
+                  openList === index ? "_active" : ""
+                }`}
               >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M0.792893 0.792893C0.402369 1.18342 0.402369 1.81658 0.792893 2.20711L3.58579 5L0.792893 7.79289C0.402369 8.18342 0.402369 8.81658 0.792893 9.20711C1.18342 9.59763 1.81658 9.59763 2.20711 9.20711L5.70711 5.70711C6.09763 5.31658 6.09763 4.68342 5.70711 4.29289L2.20711 0.792893C1.81658 0.402369 1.18342 0.402369 0.792893 0.792893Z"
-                  fill="#23262F"
-                />
-              </svg>
+                {item.list.map((items) => (
+                  <li className="list-footer__item">
+                    <a href="#!" className="list-footer__link">
+                      {items}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <ul className="item-footer__list list-footer">
-              <li className="list-footer__item">
-                <a href="#!" className="list-footer__link">
-                  Customer Review{" "}
-                </a>
-              </li>
-              <li className="list-footer__item">
-                <a href="#!" className="list-footer__link">
-                  Newsletter
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="footer__item item-footer">
-            <div className="item-footer__title">
-              About
-              <svg
-                className="footer-list__icon"
-                width="6"
-                height="10"
-                viewBox="0 0 6 10"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M0.792893 0.792893C0.402369 1.18342 0.402369 1.81658 0.792893 2.20711L3.58579 5L0.792893 7.79289C0.402369 8.18342 0.402369 8.81658 0.792893 9.20711C1.18342 9.59763 1.81658 9.59763 2.20711 9.20711L5.70711 5.70711C6.09763 5.31658 6.09763 4.68342 5.70711 4.29289L2.20711 0.792893C1.81658 0.402369 1.18342 0.402369 0.792893 0.792893Z"
-                  fill="#23262F"
-                />
-              </svg>
-            </div>
-            <ul className="item-footer__list list-footer">
-              <li className="list-footer__item">
-                <a href="#!" className="list-footer__link">
-                  Our Chef
-                </a>
-              </li>
-              <li className="list-footer__item">
-                <a href="#!" className="list-footer__link">
-                  Careers{" "}
-                </a>
-              </li>
-              <li className="list-footer__item">
-                <Link to="/blogs" className="list-footer__link">
-                  Blog
-                </Link>
-              </li>
-              <li className="list-footer__item">
-                <a href="#!" className="list-footer__link">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
+          ))}
         </nav>
       </div>
     </footer>
