@@ -42,7 +42,7 @@ export default function Blogs() {
   const onClickTag = (tag) => {
     setActiveTag(tag);
   };
-
+  console.log();
   return (
     <section className="blogs">
       <div className="blogs__container">

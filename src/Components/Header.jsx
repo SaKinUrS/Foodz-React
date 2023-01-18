@@ -5,8 +5,7 @@ import Button from "./UI/Button";
 
 export default function Header() {
   const [openBurger, setOpenBurger] = useState(false);
-
-  const refBurger = useRef();
+  const refBurger = useRef(null);
 
   useEffect(() => {
     const clickOutside = (e) => {
@@ -23,6 +22,7 @@ export default function Header() {
 
   const onClickBurger = () => {
     setOpenBurger(!openBurger);
+    document.body.style.overflow = `${openBurger ? "visible" : "hidden"}`;
   };
   return (
     <header className="header">
@@ -62,7 +62,7 @@ export default function Header() {
             openBurger === true ? "_active" : ""
           }`}
         >
-          <ul className="menu__list">
+          <ul onClick={(e) => e.stopPropagation()} className="menu__list">
             {navs.map((nav) => (
               <li key={nav.title} className="menu__item ">
                 <NavLink

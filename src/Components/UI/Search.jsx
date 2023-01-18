@@ -26,7 +26,7 @@ export default function Search({ searchValue, setSearchValue }) {
         value={searchValue}
         type="text"
         className="search-input"
-        placeholder="Search by tag, tittle, ...."
+        placeholder="Search by tag, title, ..."
       />
       <Button children={"Search"} size={"BiggerBtn"} />
     </div>

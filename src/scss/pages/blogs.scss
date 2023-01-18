@@ -536,6 +536,11 @@
   z-index: 1;
   outline: none;
   border: none;
+  overflow: auto;
+
+  @media (max-width: 375px) {
+    padding: 21px 10px 21px 46px;
+  }
 }
 .search-input::placeholder {
   color: #b1b5c3;
@@ -545,12 +550,10 @@
 }
 @media (max-width: 450px) {
   .search-input {
-    max-width: 250px;
   }
 }
 @media (max-width: 425px) {
   .search-input {
-    max-width: 150px;
   }
 }
 
