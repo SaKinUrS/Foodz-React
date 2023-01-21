@@ -29,7 +29,7 @@ export default function Menu() {
   const activateTab = (index) => {
     setActiveTab(index);
   };
-
+  console.log(activeTab);
   return (
     <div className="meal">
       <div className="meal__container">
@@ -61,31 +61,33 @@ export default function Menu() {
         <div className="meal__body">
           {isLoading
             ? [...Array(6)].map((_, i) => <SkeletonMenu key={i} />)
-            : foodz.map((food) => (
-                <div key={food.id} className="meal__column">
-                  <Link to={`${food.id}`} className="meal__item item-meal">
-                    <div className="item-meal__img">
-                      <img src={food.img} alt={food.title} />
-                    </div>
-                    <div className="item-meal__desc">
-                      <div className="item-meal__name">{food.title}</div>
-                      <div className="item-meal__reviews reviews-offers">
-                        <RatingStars />
-                        <div className="reviews-offers__count">
-                          {food.reviews} Reviews
-                        </div>
+            : foodz
+                .filter((item) => item.cat.includes(activeTab))
+                .map((food) => (
+                  <div key={food.id} className="meal__column">
+                    <Link to={`${food.id}`} className="meal__item item-meal">
+                      <div className="item-meal__img">
+                        <img src={food.img} alt={food.title} />
                       </div>
+                      <div className="item-meal__desc">
+                        <div className="item-meal__name">{food.title}</div>
+                        <div className="item-meal__reviews reviews-offers">
+                          <RatingStars />
+                          <div className="reviews-offers__count">
+                            {food.reviews} Reviews
+                          </div>
+                        </div>
 
-                      <div className="item-meal__price">
-                        <div className="item-meal__number price">
-                          ${food.price}
+                        <div className="item-meal__price">
+                          <div className="item-meal__number price">
+                            ${food.price}
+                          </div>
+                          <Button children={"order now"} size={"SmallerBtn"} />
                         </div>
-                        <Button children={"order now"} size={"SmallerBtn"} />
                       </div>
-                    </div>
-                  </Link>
-                </div>
-              ))}
+                    </Link>
+                  </div>
+                ))}
         </div>
       </div>
     </div>

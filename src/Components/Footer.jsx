@@ -69,7 +69,7 @@ export default function Footer() {
         </div>
         <nav className="footer__nav">
           {footerList.map((item, index) => (
-            <div className="footer__item item-footer">
+            <div key={index} className="footer__item item-footer">
               <div
                 className="item-footer__title"
                 onClick={() => toggleClickList(index)}
@@ -98,11 +98,11 @@ export default function Footer() {
                   openList === index ? "_active" : ""
                 }`}
               >
-                {item.list.map((items) => (
-                  <li className="list-footer__item">
-                    <a href="#!" className="list-footer__link">
+                {item.list.map((items, index) => (
+                  <li key={index} className="list-footer__item">
+                    <Link to="#!" className="list-footer__link">
                       {items}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

@@ -8,14 +8,14 @@ const RatingStars = () => {
   return (
     <div className="rating">
       {[1, 2, 3, 4, 5].map((star, index) => (
-        <Link to="#!" key={index}>
+        <button style={{ background: "transparent" }} key={index}>
           <FontAwesomeIcon
             icon={faStar}
             color={`${star <= rating ? "var(--accent-color)" : "#777e90"}`}
             size="xl"
             onClick={() => setRating(star)}
           />
-        </Link>
+        </button>
       ))}
     </div>
   );

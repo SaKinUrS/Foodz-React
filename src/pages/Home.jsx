@@ -1398,7 +1398,7 @@ export default function Home() {
                       placeholder="17 Acb Street"
                       style={errors?.address?.message && { borderColor: "red" }}
                     />
-                    <a href="#!" className="form-address__icon">
+                    <Link to="#!" className="form-address__icon">
                       <svg
                         width="18"
                         height="22"
@@ -1417,7 +1417,7 @@ export default function Home() {
                           d="M9 7C7.89543 7 7 7.89543 7 9C7 10.1046 7.89543 11 9 11C10.1046 11 11 10.1046 11 9C11 7.89543 10.1046 7 9 7ZM5 9C5 6.79086 6.79086 5 9 5C11.2091 5 13 6.79086 13 9C13 11.2091 11.2091 13 9 13C6.79086 13 5 11.2091 5 9Z"
                         />
                       </svg>
-                    </a>
+                    </Link>
                   </label>
                   {errors?.address && (
                     <div style={{ color: "red" }}>

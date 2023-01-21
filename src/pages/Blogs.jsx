@@ -13,6 +13,7 @@ import Search from "../Components/UI/Search";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { Link } from "react-router-dom";
 
 const tags = [
   "Family",
@@ -68,7 +69,7 @@ export default function Blogs() {
               )
               .map((item) => (
                 <li key={item.title}>
-                  <a href="#!" className="searched-blogs">
+                  <Link to="#!" className="searched-blogs">
                     <div className="searched-blogs__img">
                       <img src={item.img} alt={item.title} />
                     </div>
@@ -108,7 +109,7 @@ export default function Blogs() {
                         ))}
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 </li>
               ))}
           </ul>
