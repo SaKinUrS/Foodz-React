@@ -22,9 +22,12 @@ const footerList = [
 ];
 
 export default function Footer() {
-  const [openList, setOpenList] = useState(0);
+  const [openList, setOpenList] = useState(null);
 
   const toggleClickList = (id) => {
+    if (openList === id) {
+      return setOpenList(null);
+    }
     setOpenList(id);
   };
 
