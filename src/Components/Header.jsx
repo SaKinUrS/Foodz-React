@@ -7,18 +7,9 @@ export default function Header() {
   const [openBurger, setOpenBurger] = useState(false);
   const refBurger = useRef(null);
 
-  useEffect(() => {
-    const clickOutside = (e) => {
-      if (!e.path.includes(refBurger.current)) {
-        setOpenBurger(false);
-      }
-    };
-    document.body.addEventListener("click", clickOutside);
-
-    return () => {
-      document.body.removeEventListener("click", clickOutside);
-    };
-  }, []);
+  const clickOutside = () => {
+    setOpenBurger(false);
+  };
 
   const onClickBurger = () => {
     setOpenBurger(!openBurger);
@@ -58,6 +49,7 @@ export default function Header() {
           </svg>
         </Link>
         <nav
+          onClick={clickOutside}
           className={`header__menu menu ${
             openBurger === true ? "_active" : ""
           }`}

@@ -82,7 +82,7 @@ export default function Blogs() {
                         <div className="searched-blogs__text">{item.text}</div>
                       </div>
                       <div className="aside-item__filter blog-filter">
-                        {item.filter.map((item) => (
+                        {item.filter.map((item, index) => (
                           <a
                             href="#!"
                             className={`blog-filter__item item-filter_${
@@ -102,7 +102,7 @@ export default function Blogs() {
                                 ? "purple"
                                 : ""
                             }`}
-                            data-cat="orange"
+                            key={index}
                           >
                             {item}
                           </a>
@@ -199,7 +199,7 @@ export default function Blogs() {
                             {article.text}
                           </div>
                           <div className="secondary-blogs__filter blog-filter">
-                            {article.filter.map((cat) => (
+                            {article.filter.map((cat, index) => (
                               <a
                                 href="#!"
                                 className={`blog-filter__item item-filter_${
@@ -215,10 +215,8 @@ export default function Blogs() {
                                     ? "red"
                                     : ""
                                 }`}
-                                data-cat="green"
-                              >
-                                {cat}
-                              </a>
+                                key={index}
+                              ></a>
                             ))}
                           </div>
                         </div>
